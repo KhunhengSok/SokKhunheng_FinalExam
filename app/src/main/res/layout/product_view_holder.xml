@@ -3,7 +3,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="15dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="8dp"
+        android:background="@drawable/border"
         android:weightSum="100">
 
     <LinearLayout
@@ -56,11 +58,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="italic|bold"
                 android:textSize="16sp"/>
-        <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:paddingBottom="1dp"
-                android:background="#c0c0c0"/>
+
     </LinearLayout>
 
 

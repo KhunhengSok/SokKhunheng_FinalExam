@@ -6,22 +6,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".fragments.HomeFragment">
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="?attr/colorPrimary"-->
-<!--            app:title="E-Commerce"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-<!--            />-->
-
-
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
             android:layout_alignParentBottom="true"
 
         />
