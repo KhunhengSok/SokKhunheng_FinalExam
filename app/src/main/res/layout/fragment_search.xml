@@ -11,6 +11,6 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textColor ="@android:color/black"
-            android:text="This is Search Fragment" />
+            android:text="This is Search Fragment"  />
 
 </RelativeLayout>
