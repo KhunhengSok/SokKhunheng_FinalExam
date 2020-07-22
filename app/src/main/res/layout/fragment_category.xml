@@ -7,22 +7,23 @@
         tools:context=".fragments.CategoryFragment">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:layout_alignParentTop="true"
-        app:title="E-Commerce"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            />
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        app:title="E-Commerce"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--            />-->
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-            android:gravity="center"
+            android:layout_alignParentTop="true"
+        android:gravity="center"
+            android:layout_alignParentBottom="true"
 
             >
 

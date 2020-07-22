@@ -1,14 +1,20 @@
 package com.example.sokkhunheng.fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -22,6 +28,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.sokkhunheng.R;
+import com.example.sokkhunheng.activities.LoginActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -71,6 +78,30 @@ public class AccountFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.account_fragment_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.menu_logout:
+                Intent intent = new Intent(getView().getContext(), LoginActivity.class);
+                getActivity().finish();
+                startActivity(intent);
+            default:
+                break;
+        }
+
+        return true;
     }
 
     void init(View view){
@@ -87,6 +118,8 @@ public class AccountFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init(view);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+//        getActivity().(toolbar);
 
         String url = "http://ite-rupp.ap-southeast-1.elasticbeanstalk.com/profile.php";
         Request request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -115,6 +148,8 @@ public class AccountFragment extends Fragment {
 
 
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
