@@ -1,5 +1,6 @@
 package com.example.sokkhunheng.fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -91,8 +92,9 @@ public class AccountFragment extends Fragment {
         Request request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
+                Log.d(TAG, "onResponse: Return ");
                 try {
-                    Glide.with(view).load(response.getString("profileImage"));
+                    Glide.with(view).load(Uri.parse(response.getString("profileImage"))).into(imageView);
                     name.setText(response.getString("name"));
                     phone.setText(response.getString("phone"));
                     province.setText(response.getString("province"));

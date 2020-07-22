@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         showFragment(new HomeFragment());
-        //        fragment = findViewById(R.id.fragment);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -52,19 +51,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-
     }
 
 
     void showFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).commit();
+
+
         Log.d("Main", "showFragment: " + fragment.toString());
         Log.d("Main", "showFragment: Commit");
     }
